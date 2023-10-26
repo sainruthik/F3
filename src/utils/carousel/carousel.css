@@ -1,0 +1,55 @@
+
+ 
+.m_carousel .slick-list{
+  margin-top: 2%;
+  height:min(40vh,20rem);
+}
+/* .m_carousel .slick-arrow.slick-prev,
+.m_carousel .slick-arrow.slick-next{
+    opacity: 0 !important;
+}
+.m_carousel:hover .slick-arrow.slick-prev,
+.m_carousel:hover .slick-arrow.slick-next{
+    opacity: 1 !important;
+} */
+ 
+
+.m_carousel .slick-center{
+  transform: scale(1.1);
+}
+.m_carousel .slick-arrow.slick-prev::before{
+  
+    font-family: "Font Awesome 5 Free";
+    content:'\f053';
+    color:black !important;
+    font-weight: 900;
+    font-size: 2rem;
+     
+  }
+ 
+.m_carousel .slick-arrow.slick-next::before{
+   
+    font-family: "Font Awesome 5 Free";
+    content:'\f054';
+    color:black !important;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+.m_carousel .wrapper{
+  padding: 1rem 0;
+}
+
+
+/* RESPONSIVE SLIDER */
+ 
+@media (max-width:600px){
+ 
+  .m_carousel .slick-list{
+    height: max(30vh,16rem);
+  }
+  .m_carousel .slick-arrow.slick-prev,
+  .m_carousel .slick-arrow.slick-next{
+    opacity: 1 !important;
+  }
+
+}

@@ -1,0 +1,169 @@
+.fitness_main{
+    position: relative;
+    width:98vw;
+    min-height: 100vh;
+}
+.fitness_main::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image:url(../../assets/blob1.png);
+    background-color:var(--primary-dark);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+}
+.fitness_main .container{
+    position: absolute;
+    top: 7rem;
+    left: 5rem;
+    font-size: 1.5rem;
+}
+
+.fitness_main .heading{
+    font-size: 3rem;
+}
+
+.fitness_main .heading::before{
+    position: absolute;
+    left:-1rem;
+    content: '';
+    display: block;
+    width:.6rem;
+    height: 4rem;
+    background: var(--primary);
+}
+
+
+
+.fitness_main .heading_2{
+    
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+
+.fitness_main .b1{
+    background-color:var(--dark);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.fitness_main .button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    gap: 1rem;
+    
+}
+
+.fitness_main .cc{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Info */
+.fitness_main .info{
+    position: absolute;
+    top: 8rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 80vw;
+    padding-bottom: 2rem;
+} 
+
+
+@media all and (max-width:600px){
+    .fitness_main{
+        background-image:url(../../assets/blob1.png);
+        background-color:var(--primary-dark);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        position: absolute;
+        height:150vh;
+        width:100vw;
+        background-position: 100% 100%;
+    }
+
+    .fitness_main .container{
+        position: absolute;
+        top: 15vh;
+        left: 18vw;
+    }
+
+    .fitness_main .heading{
+        font-size: 8vw;
+    }
+    
+    .fitness_main .heading::before{
+        position: absolute;
+        left:-2vw;
+        content: '';
+        display: block;
+        width:1.2vw;
+        height: 100%;
+        background: var(--primary);
+    }
+
+    .fitness_main .info{
+        position: absolute;
+        top: 10vh;
+        left: 3.5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        width: 70vw;
+        font-size:5vw;
+
+    }
+
+    .fitness_main .heading_2{
+    
+        color: #fff;
+        text-shadow: .1vw 0 0 #000, 0 -.1vw 0 #000, 0 .1vw 0 #000, -.1vw 0 0 #000;
+        margin-bottom: 1vh;
+        text-transform: capitalize;
+    }
+
+    .fitness_main .b1{
+        background-color:var(--dark);
+        border: none;
+        color: white;
+        font-size: 5vw;
+        padding: 1.75vw 3.5vw;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 2vw;
+        text-transform: capitalize;
+    }
+
+     
+    .fitness_main .button{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1vh;
+        gap: 2.5vw;
+        flex-wrap: wrap;
+        font-size: 5vw;
+    }
+
+    
+    
+}

@@ -1,0 +1,246 @@
+/* SLIDERS */
+
+.bmi .sections{
+   margin-top:4%;
+    /* border:1px solid red; */
+}
+.bmi .section1{
+    margin:auto;
+    /* border:1px solid red; */
+    --size:min(4.37rem,3vw);
+    --arrow:min(1rem,0.8vw);
+    min-height: 45vh;
+    width:90%;
+    display:grid;
+    grid-template-columns:0.5fr 3.2fr 0.5fr 2fr 0.5fr;
+    grid-column-gap: min(2rem,5%);
+
+    animation: fade .4s ease-out 1;
+}
+@keyframes fade{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.bmi .section1 .L{
+    /* border:1px solid red; */
+     grid-column: 2/4;
+     grid-row: 1/2;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    
+}
+
+ 
+.bmi .section1 .Lcon h3{
+    
+    font-weight: 400;
+    font-size:clamp(1.5rem,3.2vw,3.8rem);
+    margin:1rem 0;
+}
+
+.bmi .section1 .Lcon h3 span{
+    font-weight: 400;
+     
+    padding:0.2rem 0.5rem;
+
+}
+
+.bmi .section1 .Lcon h2{
+    font-weight: 400;
+    font-size:clamp(1rem,2.2vw,3rem);
+    margin:1rem 0;
+     
+     color:rgb(57, 26, 77) ;
+}
+
+.bmi .section1 .Lcon .in{
+    text-align: center;
+    width: 100%;
+}
+
+.bmi .section1 .Lcon h4{
+    
+    font-weight: 300;
+    font-size:  clamp(1.2rem,2.5vw,3rem);
+    margin: 1rem 0;
+
+}
+
+.bmi .section1 .Lcon h4 span{
+    font-weight: 600;
+    color: var(--primary);
+    padding:0.2rem 0.5rem;
+    
+}
+
+.bmi .section1 .Lcon button{
+    cursor: pointer;
+    background:var(--dark);
+    color: white;
+    padding: .5rem 1rem;
+    font-size:  clamp(1.2rem,2vw,1.6rem);
+    border-radius: 5px;
+    outline: none;
+    margin:0.5rem 0;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.25);
+}
+.bmi .section1 .Lcon button:active{
+    transform: scale(.95);
+}
+
+.bmi .section1 .Rcon h4{
+     
+    font-size:clamp(1.2rem,2vw,2.5rem);
+    font-weight: 300;
+}
+
+.bmi .section1 .Lcon h5{
+    
+    font-size: clamp(1rem,2vw,1.5rem);
+    margin: 1rem 0;
+    font-weight: 300;
+}
+
+.bmi .section1 .Lcon h5 span{
+    
+    
+    font-weight: 400;
+    color:var(--light)
+
+}
+
+
+
+.bmi .section1 .R{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.bmi .section1 .Rcon{
+  
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    
+}
+
+.bmi .section1 .Rcon .idl{
+     
+    height: var(--size);
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+
+
+}
+
+.bmi .section1 .Rcon .idl .round{
+    width: var(--size);
+    height:100% ;
+     
+    font-weight: 700;
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+     
+    background-color: var(--light);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    
+}
+
+.bmi .section1 .Rcon .idl .round span{
+    font-size:clamp(1rem,1.6vw,1.5rem);
+}
+
+.bmi .section1 .Rcon .idl .wgts{
+    height:100%;
+    width: max-content;
+    font-size:  clamp(1rem,2vw,2.5rem);
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    background-color: var(--light);
+    padding: 0 0.5rem;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+}
+
+.bmi .section1 .Rcon .idl .wgts:before{
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-top:var(--arrow) solid transparent;
+    border-left: var(--arrow) solid transparent;
+    border-right: var(--arrow) solid white; 
+    border-bottom: var(--arrow) solid transparent;
+    right:100%;
+     
+
+    
+
+}
+
+
+@media screen and (max-width: 1300px) and (min-width:1000px)
+ {
+     .bmi .section{
+         --itemWidth:7rem;
+         --itemhw:min(2.6rem,4.5vw);
+         --value:1.4rem;
+     }
+
+     .bmi .section1 {
+         --size:2.6rem;
+     }
+}
+
+@media screen and (max-width:999px)
+{
+    .bmi .section {
+        --itemWidth:6.6rem;
+        --itemhw:2.2rem;
+         --value:1.4rem;
+    }
+
+    .bmi .hdng span{
+        height: 2.75rem;
+        width:0.5rem;
+    }
+
+    .bmi .section1 {
+        --size:2.3rem;
+        --arrow:0.5rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    .bmi .section1{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap:1rem;
+    }
+
+    .bmi .section1 .L{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .bmi .section1 .R{
+        grid-column: 1/2;
+        grid-row:2/3
+    }
+
+    
+}

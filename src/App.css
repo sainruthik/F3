@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+:root{
+
+  /* COLOR PALLETS */
+  --primary:hsl(271, 90%, 60%);
+  --primary-light:hsl(271, 100%, 90%);
+  --primary-dark:hsl(271, 44%, 75%);
+
+  --secondary-dark:hsl(346, 100%, 70%);
+  --secondary-light:hsl(346, 100%, 80%);
+
+  --dark:hsl(258, 80%, 10%);
+  --light: white;
+  
+  /* fonts */
+  font-family: 'Open sans', sans-serif;
+
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+ 
+::-webkit-scrollbar{
+  background: var(--dark);
+  width:.7rem; 
+}
+
+::-webkit-scrollbar-thumb{
+  width: 0.5em;
+  border-radius: 1rem;
+  background: var(--light);
+}
+ 

@@ -1,0 +1,316 @@
+.calc_main{
+    background-image:url(../../assets/blob1.png);
+    background-color:var(--primary-dark);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height:100vh;
+    width:100vw;
+    background-position: 100% 100%;
+}
+
+.calc_main .Heading{
+    position: relative;
+    top:5rem;
+    left:5vw;
+    width:max-content;
+    font-size: 2.5rem; 
+}
+
+.calc_main .Heading::before{
+    position: absolute;
+    left:-1rem;
+    content: '';
+    display: block;
+    width:.4rem;
+    height: 100%;
+    background: var(--primary);
+}
+
+/* CONTENT */
+.calc_main .content{
+    position: relative;
+    top:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5vh;
+}
+
+/* SEARCH BAR */
+.calc_main form{
+    display: flex; 
+    justify-content: center; 
+}
+
+.calc_main .searchbar{ 
+    padding: .2rem 1rem;
+    display: flex;
+    justify-content: center;    
+    align-items:baseline;  
+    gap:.5rem;
+    background: var(--light);
+    width: max-content;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+}
+
+.calc_main .searchbar input{
+    width: 20rem;
+    height:2rem;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+}
+.calc_main .searchbar input:focus{
+    outline: none;
+}
+.calc_main .searchbar button{
+    border:none;
+    background: none;
+}
+
+.calc_main ::placeholder{
+    font-size: 1rem;
+}
+
+
+
+/* RESULT */
+.calc_main .result{
+    display: grid;
+    place-items:center;
+}
+
+.calc_main .infoTile{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    padding: .6rem;
+    background: var(--light);
+    border-radius: 1.5vw;   
+}
+
+.calc_main .img{
+    width: 15rem;
+    aspect-ratio: 1/1;
+    border-radius: 1rem; 
+    padding : 5px 5px;
+}
+
+.calc_main #x{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px;
+    font-size: 1.2rem;
+    border-radius:5px;
+    box-shadow: 0px 0px 1.5px 1.5px grey;
+    width: 100px;
+}
+
+.calc_main .values{
+    float: left;
+    padding: 15px 5px;
+}
+
+.calc_main .calories{
+    height:25px;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 20px 0px;
+    font-size: 1.3rem;
+    border: 2px solid  var(--primary) ;
+    border-radius:5px;
+}
+
+.calc_main .cal_item{
+    display: flex;
+    flex-direction:row; 
+    justify-content: center;    
+    align-items: center;  
+}
+
+.calc_main .item_value{
+    display: flex;
+    flex-direction:row; 
+    justify-content: center;    
+    align-items: center;    
+}
+
+.calc_main #a{
+    border: 0px solid var(--primary) ;
+    height: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    padding: 0px 0px;
+}
+
+.calc_main #b{
+    
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    box-shadow: 0px 0px 5px 3px rgba(194, 188, 188, 0.938);
+}
+
+.calc_main .error{
+    margin-top: 5vh;
+    font-size: 2rem;
+}
+
+
+/* MAking responsive*/
+
+@media all and (max-width:499px){
+    .calc_main{
+        background-image:url(../../assets/blob1.png);
+        background-color:var(--primary-dark);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        position: absolute;
+        height:100vh;
+        width:100vw;
+        background-position: 100% 100%;
+    }
+    
+    .calc_main .Heading{
+        position: relative;
+        top:12vh;
+        left:5vw;
+        max-width: 100vw;
+        font-size: 8vw; 
+    }
+    .calc_main .Heading::before{
+        position: absolute;
+        left:-2vw;
+        content: '';
+        display: block;
+        width:1.2vw;
+        height: 100%;
+        background: var(--primary);
+    }
+
+
+
+    /* SEARCH BAR */
+    .calc_main .searchbar{ 
+        padding: .7vw 2vw;
+        display: flex;
+        justify-content: center;    
+        align-items:baseline;  
+        gap:.5vw;
+        background: var(--light);
+        width: max-content;
+        box-shadow: 0 .5vw .5vw rgba(0,0,0,0.25);
+    }
+
+    .calc_main .searchbar input{
+        width: 80vw;
+        height:2rem;
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+    }
+
+    .calc_main ::placeholder{
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width:650px){    
+    .calc_main .result{
+        display: grid;
+        place-items:center;
+    }
+
+    .calc_main .infoTile{
+        display: flex;
+        align-items: center;
+        gap:0vw;
+        padding: 1vw 1vw 1vw 2vw ;
+        background: var(--light);
+        border-radius: 0.5rem;   
+    }
+
+    .calc_main .img{
+        width: 35vw;
+        aspect-ratio: 1/1;
+        border-radius: 2.5vw; 
+        padding : 0vw 0vw;
+        margin-right: 2vw;
+    }
+
+    .calc_main #x{
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vw;
+        width: 15vw; 
+        box-shadow: 0px 0px 0.25vw 0.25vw grey;
+        margin-top: 1vw;
+         
+    }
+
+    .calc_main .values{
+        float: left;
+        padding: 0vw 1vw;
+    }
+    
+    .calc_main .calories{
+        height: 2vw;
+        width: 36vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3vw 1vw;
+        margin: 3vw 0vw;
+        font-size: 4vw;
+        border: .4vw solid  var(--primary) ;
+        border-radius: 5px; 
+    }  
+
+    .calc_main #a{
+        padding-top: 2vw;
+        height:3vw;
+        width: 11vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5vw 1vw;
+        font-size: 3vw;
+    }
+
+    .calc_main #y{
+        font-size: 4vw;
+        margin-top: 2vw;
+    }
+    
+    .calc_main #b{
+        border-radius: 50%;
+        height: 11vw;
+        width: 11vw;
+        margin: 2vw 1vw;
+        font-size: 3vw;
+        box-shadow: 0vw 0vw .5vw .5vw rgba(194, 188, 188, 0.938);
+    }
+    
+    .calc_main .error{
+        margin-top: 5vh;
+        font-size: 2rem;
+    }   
+}

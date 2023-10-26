@@ -1,0 +1,184 @@
+.header{
+    position:fixed;
+    top:0;
+    z-index:9;
+    display:flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    height:4rem;
+    /* background: var(--primary-light); */
+}
+.header .logo{
+    position: relative;
+    margin-left: 1rem;
+    width:3.5rem;
+    height: 3.5rem;
+    background-image: url('../../assets/f3logo.jpeg');
+    background-size: cover;
+}
+.header .logo:hover::before{
+    content: '';
+    display: block;
+    position: absolute;
+    inset:0;
+    z-index:1;
+    transform: scale(1.05);
+  
+    /* background: white; */
+    border: 3px solid white;
+ 
+}
+.header .nav{
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    gap:.5rem;
+    height:3rem;
+    text-transform: capitalize;
+}
+.nav .options{
+    position: relative;
+    width:100%;
+    height: 100%;
+    text-transform: capitalize;
+    /* border: 2px solid red; */
+}
+.navtoggle:checked + .options .menus{
+    transform: scale(1,1);
+    opacity: 1;
+}
+.options .menus{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:1rem;
+    padding:.8rem;
+    /* border: 2px solid red; */
+    background: var(--dark);
+    transform: scale(0,1);
+    transform-origin: right;
+    opacity: 0;
+    transition: transform .3s ease, opacity .2s ease;
+}
+.options .menus .link{
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+.options .menus .link::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width:100%;
+    height:.1rem;
+    background:white;
+    transform: scale(0,1);
+}
+.options .menus .link:hover::after{
+    transform: scale(1,1);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+.options .menus .link.menu_act::after{
+    transform: scale(1,1);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.navtoggle:checked ~ .options .head{
+    transform: scale(0,1);
+    opacity: 0;
+    transition: transform .2s ease,opacity .2s ease;
+    
+}
+  .head{
+    /* display: none; */
+    position:absolute;
+    top:0;
+    right:0;
+    display: grid;
+    padding: 0rem .5rem;
+    place-items: center;
+    height:100%;
+    font-size: clamp(.8rem,5vw,1.3rem);
+    font-weight: 100;
+    background: var(--dark);
+    color: white;
+    
+    transform: scale(1,1);
+    transform-origin:right;
+    /* border: 2px solid red; */
+}
+
+/* Burger */
+.navtoggle{display: none;}
+.header label{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width:3.3rem;
+    height:100%;
+    background:var(--dark);    
+}
+.header label span{
+    position: absolute;
+    width:70%;
+    height:.25rem;
+    background: white;
+    transition: all .3s ease-in-out;
+} 
+.header label span:first-child{
+   top:.8rem;
+}
+.header label span:nth-child(2){
+   top:1.4rem;
+}
+.header label span:last-child{
+   bottom:.7rem;
+}
+    /* animate - burger*/
+.header .navtoggle:checked ~ label span:first-child{
+    transform: rotate(45deg) translate(25%,150%);
+}
+.header .navtoggle:checked ~ label span:nth-child(2){
+    opacity: 0;
+}
+.header .navtoggle:checked ~ label span:last-child{
+    transform: rotate(-45deg) translate(25%,-150%);
+}
+/* end - Burger */
+
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    .header .logo{
+        margin-left: 1rem;
+        max-width:2.5rem;
+        max-height: 2.5rem;
+       
+    }
+    .header .nav{
+        margin-right: 1rem;
+    }
+}
+@media (max-width:480px){
+    .header .logo{
+        margin-left: .5rem;
+    }
+    .options .menus{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .header label{
+        width:4rem;
+        height:100%;
+    }
+    .options .menus .link{
+        font-size: clamp(.7rem,5vw,1.3rem);
+    }
+     
+}

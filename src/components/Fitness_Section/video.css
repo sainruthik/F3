@@ -1,0 +1,5 @@
+ 
+.video iframe{
+    width:max(25vw,8rem);
+    aspect-ratio: 1/.6;
+}

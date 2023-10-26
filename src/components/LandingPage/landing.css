@@ -1,0 +1,205 @@
+.landing{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+}
+.landing::before{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: var(--primary-dark);
+    background-image: url('../../assets/hm_blob.png');
+    background-position: 100% 100%;
+    background-size: cover;
+}
+.landing .content{
+    position: absolute;
+    width: 100%; 
+    min-height: 110vh;
+}
+.landing .content .nav{
+ 
+    margin:3%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    font-size: 1.2rem;
+}
+.landing .nav li {
+    color: var(--secondary-dark);
+    padding: .5rem;
+    background-color: var(--secondary-light);
+    border-radius: 5px;
+}
+.landing .nav li:hover{
+    box-shadow: 0 0 4px var(--dark);
+}
+ 
+.landing .content > h1{
+    margin-top: 5rem;
+    margin-bottom: min(10%,5rem);
+    font-weight:300;
+    font-size: clamp(2.5rem,10vw,7rem);
+    text-align: center;
+    color: var(--dark);
+}
+.landing .content > .notes{
+    margin-top: 3rem;
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+    padding: .5rem;
+    background: var(--secondary-dark);
+    list-style: none;
+}
+.landing .content > .notes .main{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.landing > .notes a{
+    
+    color:var(--dark)
+}
+
+/* SECTIONS */
+.landing .m_sections{
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:1rem;
+    margin: 1rem;
+}
+.landing .m_sections .card{
+    position: relative;
+
+    --card-width: min(40vw, 15rem);
+    width: var(--card-width);
+    height: var(--card-width);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.25);
+}
+.landing .m_sections .card .image{
+    position: absolute;
+    z-index: 1;
+    width: var(--card-width);
+    height:var(--card-width);
+   
+    
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.landing .m_sections .card::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:calc(var(--card-width) / 2);
+    z-index: 2;
+    background: rgba(0,0,0,.65);
+
+    transform: scale(1,0);
+    transform-origin: top;
+}
+.landing .m_sections .card::after{
+    content: '';
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height:calc(var(--card-width) / 2);
+    z-index: 2;
+    background: rgba(0,0,0,.65);
+
+    transform: scale(1,0);
+    transform-origin: bottom;
+}
+.landing .m_sections .card:hover::before,
+.landing .m_sections .card:hover::after{
+    transform: scale(1,1);
+    transition: transform .25s ease-in-out;
+}
+ 
+.landing .m_sections .card .title{
+    color: var(--light);
+    cursor:pointer;
+}
+.landing .m_sections .card .title::before{
+    content:attr(data-des);
+    position: absolute;
+    inset:0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    text-align: left;
+   
+    font-size:clamp(.6rem, 1.5vw, .9rem);
+    padding:1.2rem;
+    opacity: 0;
+}
+ 
+.landing .m_sections .card:hover .title::before{
+    opacity: 1;
+    transition: opacity .5s ease-out;
+}
+.landing .m_sections .card .title::after{
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    z-index: 4;
+
+    text-align: center;
+    padding: .5rem 0rem;
+    font-size:clamp(.5rem,4vw,1.2rem);
+    background: rgba(0,0,0,.65);
+    opacity: 1;
+    transition: opacity .6s ease-out;
+}
+.landing .m_sections .card:hover .title::after{
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+/* FOOTER */
+.landing footer{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+
+    background: var(--dark);
+    color: rgba(255,255,255,.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:.3rem;
+    padding: .2rem 0;
+}
+.landing footer .cright{
+    font-size: clamp(1rem,2vw,1.2rem);
+}
+.landing footer .dis{
+    font-size: clamp(.8rem,2vw,1rem);
+    text-align: center;
+}
+
+/* Tabs Version */
+@media screen and (min-width:602px) and (max-width:1025px){
+    .landing .m_sections .card{
+        --card-width:min(20vw,13rem)
+    }
+    .landing .m_sections .card .title::after{
+        font-size:clamp(.5rem,2vw,1.1rem);
+        padding: .3rem 0rem;
+    }
+}
+@media (max-width:600px){
+    .landing .content{
+        min-height: 100vh;
+    }
+}
